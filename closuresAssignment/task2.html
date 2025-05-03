@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>closures</title>
+</head>
+<body>
+    <script>
+       function funprocessObjectDelayed(items,index){
+                items.forEach( it =>{
+                    setTimeout(function(){
+                        it.process();
+                    },index*1000);
+                    index++;
+                });
+        }
+        const items = [
+            { name: "Alpha", process: function() { console.log(`Processing: ${this.name}`); } },
+            { name: "Beta", process: function() { console.log(`Task for ${this.name} done.`); } }
+        ];
+
+        funprocessObjectDelayed(items,1);
+    </script>
+</body>
+</html>

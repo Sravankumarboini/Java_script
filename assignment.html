@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        function formatCurrency(amount,currencyCode){
+            amount=String(amount.toFixed(2));
+            let array=amount.split('.');
+            let realPart=array[0];
+            let decimalPart=array[1];
+            let n=realPart.length;
+            let result = [];
+            if(currencyCode==='INR'){
+                if (n >= 1) result.push(realPart[n - 1]);
+            if (n >= 2) result.push(realPart[n - 2]);
+                    let count = 1;
+                for (let i = n - 3; i >= 0; i--) {
+                    if (count % 2 === 0) {
+                        result.push(',');
+                    }
+                    result.push(realPart[i]);
+                    count++;
+                }
+                result = result.reverse().join('') + '.' + decimalPart;
+            return '₹' + result;
+            }  
+
+            if(currencyCode==='USD'){
+            count=1;
+            for(let i=n-1;i>=0;i--){
+                    result.push(realPart[i]);
+                    if(count % 3 === 0 && i !== 0){
+                        result.push(',')
+                    }
+                    count++;
+            }
+            result = result.reverse().join('') + '.' + decimalPart;
+            return '$' + result;
+            
+        }
+        if(currencyCode==='EUR'){
+            count=1;
+            for(let i=n-1;i>=0;i--){
+                    result.push(realPart[i]);
+                    if(count % 3 === 0 && i !== 0){
+                        result.push('.')
+                    }
+                    count++;
+            }
+            result = result.reverse().join('') + ',' + decimalPart;
+            return '$' + result;
+            
+        }
+        }
+        
+        console.log(formatCurrency(12345.24,'EUR'));
+    </script>
+</body>
+</html>

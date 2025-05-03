@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>closures</title>
+</head>
+<body>
+    <script>
+        function filterObjectProperties(obj,minLen){
+            let ans={}
+           for(let key in obj){
+            if(typeof(data[key])=='string' && data[key].length >=minLen){
+                ans[key]=data[key];
+            }
+           }
+           return ans;
+           
+    }
+    const data = { a: "short", b: "longer string", c: 123, d: "very long string indeed" };
+        const filteredData = filterObjectProperties(data, 6);
+
+        console.log(filteredData);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>closures</title>
+</head>
+<body>
+    <script>
+        function createUniqueCounter(){
+            let count=0;
+            const counter={
+                increment(){
+                    count++;
+                    return count;
+                } ,
+                getValue(){
+                    return count;
+                }
+            }
+            return counter;
+        }
+        const coutingValue=createUniqueCounter();
+        console.log(coutingValue.increment())
+        console.log(coutingValue.getValue())
+        console.log(coutingValue.increment())
+    </script>
+</body>
+</html>

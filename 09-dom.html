@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM PROJECTS</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        .subscrible-button{
+            border: none;
+            color: white;
+            background-color: black;
+            border-radius: 20px;
+            width: 100px;
+            height: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 35px;
+        }
+        .is-subscribed{
+            background-color: rgb(240, 240, 240);
+            color: black;
+
+        }
+
+        .cost-input{
+            font-size: 15px;
+            padding: 10px;
+
+        }
+
+        .calculate-button{
+            background-color: green;
+            border: none;
+            color: white;
+            font-size: 15px;
+            padding: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Youtube subscribe button</p>
+    <button class="subscrible-button"  onclick="
+     subscribe();
+     ">subscribe</button>
+
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="cost of order" class="js-input cost-input" onkeydown="
+     if(event.key==='Enter'){
+            calculateTotal();
+        }
+    ">
+    <button class="calculate-button" onclick="
+        calculateTotal();
+    ">calculate</button>
+    <p class="result"></p>
+<script>
+    function calculateTotal(){
+        const inputElement=document.querySelector('.js-input');
+        let cost=Number(inputElement.value);
+        if(cost<=40){
+            cost=cost + 10;
+        }
+        document.querySelector('.result').innerHTML=`$${cost}`;
+    }
+
+
+    function subscribe() {
+        const element=document.querySelector('button')
+
+
+     if(element.innerText==='subscribe'){
+        element.innerText='subscribed';
+        element.classList.add('is-subscribed');
+     }
+     else{
+        element.innerText='subscribe';
+        element.classList.remove('is-subscribed');
+     }
+    }
+</script>
+     </button>
+</body>
+</html>
