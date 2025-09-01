@@ -13,6 +13,21 @@ function randomMove() {
     else return 'scissors';
 }
 
+let isAutoPlaying=false;
+let intervalId;
+function autoplay(){
+    if(!isAutoPlaying){
+        intervalId=setInterval(function(){
+        const playerMove=randomMove();
+        playGame(playerMove);
+         },1000);
+         isAutoPlaying=true;
+    }else{
+        clearInterval(intervalId);
+        isAutoPlaying=false;
+    }
+}
+
 function playGame(playerMove) {
     const computerMove = randomMove();
 
