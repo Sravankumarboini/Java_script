@@ -4,7 +4,15 @@
     <title>Advanced Funtions</title>
 </head>
 <body>
+    <button onclick="" class="js-button">click</button>
     <script>
+        const eventListner=()=>{
+            console.log('click');
+        };
+       /* const buttonElement=document.querySelector('.js-button');
+        buttonElement.addEventListener('click',eventListner);
+        buttonElement.removeEventListener('click',eventListner);
+        buttonElement.addEventListener('click',eventListner);*/
         /*
         function greeting(){
             console.log("hello");
@@ -47,13 +55,43 @@
         },3000);
 
         console.log("next line2");*/
-        [
+       /* [
             'make dinner',
             'wash dishes',
             'wach youtube'
-        ].forEach(function(value,index){
+        ].forEach((value,index)=>{
+            if(value=="wash dishes") return;
             console.log(value,index);
         });
+
+        const arrowFunction=(param,param2)=>{
+            console.log('hello');
+        }
+        arrowFunction();
+
+        const oneParam=(param)=>{
+            console.log(param+1);
+        }
+        oneParam(2);
+
+        const oneline=()=> 2+3;
+        console.log(oneline());
+
+        const object2={
+            method:()=>{
+
+            }
+            ,
+            method(){
+
+            }
+        }*/
+      /* console.log([1,-3,4].filter((value,index)=>{
+            return value>=0;
+       }));*/
+       console.log([1,1,3].map((value,index)=>{
+        return value+10;
+       }));
     </script>
 </body>
 </html>
