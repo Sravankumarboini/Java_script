@@ -1,13 +1,7 @@
-let promise = new promise((resolve, reject)=>{
-    console.log("i am a promise");
-    resolve("success");
-});
-
-
-
-
-
-
+// let promise = new promise((resolve, reject)=>{
+//     console.log("i am a promise");
+//     resolve("success");
+// });
 
 
 // console.log("one");
@@ -23,12 +17,15 @@ let promise = new promise((resolve, reject)=>{
 
 
 function getData(dataId, getNextData){
-    setTimeout(()=>{
-    console.log("data", dataId);
-    if(getNextData){
-         getNextData();
-    }
-}, 2000);
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("data", dataId);
+            resolve("success");
+            if(getNextData){
+                getNextData();
+            }
+        }, 5000);
+    })
 }
 // //callback hell
 // getData(1, ()=>{
