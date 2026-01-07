@@ -1,13 +1,25 @@
-console.log("one");
+let promise = new promise((resolve, reject)=>{
+    console.log("i am a promise");
+    resolve("success");
+});
 
-function hello(){
-    console.log("hello");
-}
-setTimeout(()=>{
-    console.log("hello");
-}, 2000);
 
-console.log("two");
+
+
+
+
+
+
+// console.log("one");
+
+// function hello(){
+//     console.log("hello");
+// }
+// setTimeout(()=>{
+//     console.log("hello");
+// }, 2000);
+
+// console.log("two");
 
 
 function getData(dataId, getNextData){
@@ -18,9 +30,11 @@ function getData(dataId, getNextData){
     }
 }, 2000);
 }
-
-getData(1, ()=>{
-    getData(2, ()=>{
-        getData(3);
-    });
-});
+// //callback hell
+// getData(1, ()=>{
+//     getData(2, ()=>{
+//         getData(3, ()=>{
+//             getData(4);
+//         });
+//     });
+// });
