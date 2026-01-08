@@ -72,13 +72,11 @@ function asyncFunc2(){
     });
 };
 
-let p1 = asyncFunc1();
 console.log("fetching data1....");
-p1.then((res)=>{
+asyncFunc1().then((res)=>{
     console.log(res);
     console.log("fetching data2....");
-    let p2 = asyncFunc2();
-    p2.then((res)=> {
+    asyncFunc2().then((res)=> {
         console.log(res);
     });
 });
