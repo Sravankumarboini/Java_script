@@ -54,29 +54,37 @@
 // });
 //--------------------------------------------------------------------
 
-function asyncFunc1(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("data1");
-            resolve("successsss");
-        }, 4000);
-    });
-};
+// function asyncFunc1(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("data1");
+//             resolve("successsss");
+//         }, 4000);
+//     });
+// };
 
-function asyncFunc2(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("data2");
-            resolve("successsss");
-        }, 4000);
-    });
-};
+// function asyncFunc2(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             console.log("data2");
+//             resolve("successsss");
+//         }, 4000);
+//     });
+// };
 
-console.log("fetching data1....");
-asyncFunc1().then((res)=>{
-    console.log(res);
-    console.log("fetching data2....");
-    asyncFunc2().then((res)=> {
-        console.log(res);
-    });
-});
+// console.log("fetching data1....");
+// asyncFunc1().then((res)=>{
+//     console.log(res);
+//     console.log("fetching data2....");
+//     asyncFunc2().then((res)=> {
+//         console.log(res);
+//     });
+// });
+
+//-------------------------------------------------------------------
+
+async function hello(){
+    console.log("hello");
+}
+
+hello();
