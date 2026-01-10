@@ -1,5 +1,9 @@
-const URL = "https://cat-fact.herokuapp.com";
+const URL = "https://cat-fact.herokuapp.com/facts";
 
-let promise = fetch(URL);
+const getFacts = async () =>{
+    let response = await fetch(URL);
+    console.log(response);
+    let data = await response.json();
+    console.log(data);
+};
 
-console.log(promise);
